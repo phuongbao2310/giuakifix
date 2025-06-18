@@ -155,40 +155,33 @@ body.contrast-mode {
     --secondary-bg: #ffffff; /* Nền phụ rất sáng */
     --text-light: #333333; /* Chữ tối */
     --text-dark: #666666; /* Chữ phụ, hơi xám đậm */
-    --accent-color: #007bff; /* Màu xanh dương làm điểm nhấn (có thể giữ màu xanh ngọc nếu muốn) */
+    --accent-color: #007bff; /* Màu xanh dương làm điểm nhấn */
     --accent-color-light: #6aa8ff; /* Màu xanh dương sáng hơn */
     --border-color: #cccccc; /* Viền sáng */
     --shadow-color: rgba(0, 0, 0, 0.2); /* Shadow nhẹ hơn */
-    --light-color: #000000; /* Ánh sáng đen (hoặc giữ trắng nếu muốn) */
+    --light-color: #000000; /* Ánh sáng đen  */
     --light-glow-color: rgba(0, 0, 0, 0.5); /* Loe đen */
-    --banner-full-bg-color: var(--primary-bg); /* Hoặc màu #cccccc nếu bạn muốn một màu xám khác cho banner tương phản */
-    --footer-full-bg-color: var(--secondary-bg); /* Hoặc màu #eeeeee nếu bạn muốn khác */
+    --banner-full-bg-color: var(--primary-bg); 
+    --footer-full-bg-color: var(--secondary-bg);
 }
-
-/* Điều chỉnh một số phần tử cụ thể trong contrast-mode nếu cần */
 body.contrast-mode .sidebar-nav {
     border-right-color: var(--border-color);
     box-shadow: 2px 0 10px var(--shadow-color);
 }
-
 body.contrast-mode .sidebar-avatar {
     border-color: var(--text-dark); /* Viền avatar tối hơn */
 }
-
 body.contrast-mode .sidebar-nav .nav-links li a:hover {
     background-color: var(--accent-color);
     color: var(--secondary-bg); /* Chữ trên hover sáng hơn */
 }
-
 body.contrast-mode .sidebar-nav .nav-links li a:hover i {
     color: var(--secondary-bg);
 }
-
 body.contrast-mode .section-card {
     border-color: var(--border-color);
     box-shadow: 0 5px 20px var(--shadow-color);
 }
-
 body.contrast-mode .about-item,
 body.contrast-mode .hobby-item,
 body.contrast-mode .skill-category,
@@ -204,46 +197,9 @@ body.contrast-mode .contact-info-item:hover {
 }
 /* Điều chỉnh hiệu ứng ánh sáng trong contrast-mode */
 body.contrast-mode .light-sweep {
-    /* Có thể đổi màu thành đen để nổi bật trên nền sáng */
     background: linear-gradient(to right, transparent, var(--text-light), transparent); /* Dùng màu chữ chính */
     animation: flash-glow-animation-contrast var(--light-speed-duration) ease-in-out infinite alternate;
 }
-/* Trong file CSS của bạn */
-
-/* Điều chỉnh nút "Chế độ Chỉnh sửa" trong contrast-mode */
-body.contrast-mode .global-edit-btn {
-    background-color: #e0e0e0; /* Màu nền sáng hơn cho nút */
-    color: var(--text-dark);   /* Chữ màu tối */
-    border-color: #a0a0a0;     /* Viền màu xám đậm hơn */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Shadow nhẹ hơn */
-}
-
-body.contrast-mode .global-edit-btn:hover {
-    background-color: #d0d0d0; /* Nền hover sáng hơn một chút */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-body.contrast-mode .global-edit-btn.active {
-    background-color: var(--accent-color); /* Giữ màu accent cho trạng thái active */
-    color: var(--secondary-bg); /* Chữ sáng trên nền accent */
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4); /* Shadow màu xanh cho trạng thái active */
-}
-
-body.contrast-mode .global-edit-btn.active:hover {
-    background-color: var(--accent-color-light); /* Màu accent sáng hơn khi hover active */
-}
-
-/* Các nút chỉnh sửa nhỏ hơn (edit-btn-section) nếu chúng cũng bị ảnh hưởng */
-body.contrast-mode .edit-btn-section {
-    background-color: var(--accent-color); /* Hoặc một màu khác nếu bạn muốn khác biệt */
-    color: var(--secondary-bg);
-}
-
-body.contrast-mode .edit-btn-section:hover {
-    background-color: var(--accent-color-light);
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
-}
-/* Trong file CSS của bạn */
 body.contrast-mode .project-item .project-tech-stack li {
     background-color: #e9ecef; /* Nền sáng hơn */
     color: var(--text-dark); /* Chữ tối hơn */
@@ -331,8 +287,6 @@ body.contrast-mode .icon-item:hover {
     background-color: var(--accent-color);
     color: var(--secondary-bg);
 }
-
-/* Điều chỉnh lại màu chữ h1, h2, h3 trong contrast-mode nếu cần, vì mặc định chúng dùng var(--text-light) */
 body.contrast-mode h1,
 body.contrast-mode h2,
 body.contrast-mode h3 {
@@ -350,10 +304,6 @@ body {
     position: relative;
     background: var(--banner-full-bg-color); /* Thay đổi thành một màu xám duy nhất */
 }
-
-/* Xóa bỏ gradient layers cũ */
-/* ...existing code... */
-
 .container {
     width: 90%;
     max-width: 1100px;
@@ -527,7 +477,7 @@ p {
     flex-grow: 1; /* Cho phép nó mở rộng để chiếm không gian còn lại */
     margin-left: var(--sidebar-width); /* Đẩy nội dung chính sang phải bằng chiều rộng sidebar */
     transition: margin-left var(--sidebar-transition-duration) ease-in-out; /* For responsive slide */
-    position: relative; /* Có thể không cần thiết cho mục đích này nhưng an toàn để giữ */
+    position: relative; 
     z-index: 1; /* Đảm bảo nội dung chính nằm trên nền giả */
 }
 
@@ -538,27 +488,25 @@ p {
     z-index: 10;
     background-color: transparent;
 }
-
-/* Cập nhật CSS cho Banner và Avatar lớn */
 .banner {
     background: url('../images/nen.jpg.jpg') center center/cover no-repeat;
     min-height: 400px;
     position: relative;
     overflow: hidden;
-    width: 100%; /* Thay đổi */
-    margin-left: 0; /* Thay đổi */
-    padding: 80px 20px; /* Thay đổi */
+    width: 100%; 
+    margin-left: 0; 
+    padding: 80px 20px; 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Avatar lớn trong banner */
+
 .profile-avatar-large {
-    width: 180px; /* Kích thước lớn hơn */
-    height: 180px; /* Kích thước lớn hơn */
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 5px solid var(--text-light); /* Viền dày hơn */
+    border: 5px solid var(--text-light); 
     object-fit: cover;
     margin-bottom: 20px; /* Khoảng cách với tên */
     box-shadow: 0 8px 20px var(--shadow-color); /* Bóng đổ nổi bật hơn */
@@ -574,23 +522,23 @@ p {
 .banner-content {
     position: relative;
     z-index: 2;
-    width: 100%; /* Đảm bảo nội dung chiếm hết chiều ngang */
+    width: 100%; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .banner-content h1 {
-    font-size: 3em; /* Điều chỉnh kích thước chữ nếu cần */
+    font-size: 3em; 
     margin-top: 0; /* Đảm bảo khoảng cách phía trên */
     margin-bottom: 10px;
 }
 
 .banner-content .tagline {
-    font-size: 1.2em; /* Điều chỉnh kích thước chữ nếu cần */
+    font-size: 1.2em; 
 }
 
-/* --- HIỆU ỨNG ÁNH SÁNG NHẤP NHÁY --- */
+
 
 /* --- Main Content Layout --- */
 .main-sections {
@@ -645,80 +593,6 @@ p {
     border-radius: 2px;
 }
 
-/* --- Nút chỉnh sửa (Edit Buttons) CŨ - Giờ bị ẩn mặc định --- */
-/* (Các nút này giờ sẽ được ẩn và chỉ hiện ra khi ở chế độ chỉnh sửa) */
-.edit-btn-section { /* Thay thế cho .edit-btn, .edit-btn-center */
-    background-color: var(--accent-color);
-    color: var(--primary-bg);
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: 600;
-    transition: background-color var(--hover-effect-duration) ease-in-out, transform 0.2s ease-in-out;
-    margin-top: 10px;
-    display: none; /* Mặc định ẩn */
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.edit-btn-section:hover {
-    background-color: var(--accent-color-light);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.4);
-}
-
-/* Nút "Chế độ Chỉnh sửa" toàn cục */
-.global-edit-controls {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    position: sticky; /* Cố định khi cuộn */
-    top: 10px; /* Khoảng cách từ trên cùng */
-    z-index: 900; /* Nằm trên các section, dưới sidebar */
-}
-
-.global-edit-btn {
-    background-color: #555; /* Màu xám trầm hơn */
-    color: var(--text-light);
-    border: 1px solid var(--border-color);
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-.global-edit-btn:hover {
-    background-color: #666;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
-}
-
-.global-edit-btn.active {
-    background-color: var(--accent-color); /* Sáng hơn khi đang ở chế độ chỉnh sửa */
-    color: var(--primary-bg);
-    box-shadow: 0 0 15px var(--accent-color-light);
-}
-
-.global-edit-btn.active:hover {
-    background-color: var(--accent-color-light);
-}
-
-
-.edit-mode-actions {
-    display: none; /* Mặc định ẩn, sẽ hiện khi vào edit mode */
-    gap: 15px;
-    justify-content: center;
-    margin-top: 15px;
-}
 
 /* --- Thông tin cá nhân --- */
 .about-grid {
